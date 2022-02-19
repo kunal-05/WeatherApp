@@ -6,6 +6,7 @@ import hbs from 'hbs'
 import {geocode} from './utils/geocode.js'
 import {forecast} from './utils/forecast.js'
 const app = express()
+const port = process.env.PORT || 3000
 //for ES6 format
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -62,6 +63,6 @@ app.get('*',(req,res)=>{
     res.render('404')
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("Server is up!!!")
 })
